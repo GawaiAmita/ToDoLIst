@@ -1,0 +1,243 @@
+/* For the external box effect */
+* {
+      box-sizing: border-box;
+      margin: 0%;
+      font-family: 'fira sans', sans-serif;
+    }
+    
+    /* Designing the body section of the page */
+    body {
+      padding-top: 0rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    
+      /* Change background color */
+      /* background: var(--dark); */
+      background-color: black;
+      color: black;
+    }
+    
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(list.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: left top;
+      background-size: cover;
+      filter: blur(5px);
+      z-index: -1;
+    }
+    
+    /* Designing the header section of the page (to-do list heading, bar, add button) */
+    header {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      align-content: center;
+      margin-bottom: 5px;
+    }
+    
+    /* Heading "To-Do List" */
+    header h1 {
+      font-size: 2.8rem;
+      color: rgb(215, 33, 124);
+      text-shadow: 4px 4px 4px rgba(3, 39, 123, 0.445);
+      font-weight: 900;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+    
+    header h1::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, rgb(215, 33, 124), rgba(255, 255, 255, 2), rgb(215, 33, 124));
+    }
+    
+    /* Heading "plan" */
+    header h2 {
+      font-size: 2rem;
+      color: rgb(215, 33, 124);
+      text-shadow: 2px 2px 2px rgba(3, 39, 123, 0.445);
+      font-weight: 500;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      position: relative;
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Designing the form with id=new-task-form */
+    #main-list-form {
+      display: flex;
+    }
+    
+    /* Input (bar, text) and buttons (add, edit, delete) */
+    input,
+    button {
+      appearance: none;
+      border: none;
+      outline: none;
+      background: none;
+    }
+    
+    /* Input with id=new-task-input (bar external design & input text design) */
+    #list-input {
+      flex: 1 1 0%;
+      background: transparent;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin-right: 1rem;
+      color: black;
+      font-size: 1.25rem;
+      border: 2px solid hotpink;
+      transition: background-color 0.3s;
+    }
+    
+    #list-input:focus {
+      background-color: white;
+    }
+    
+    /* Input with id=new-task-input (placeholder "Add your task" design) */
+    #list-input::placeholder {
+      color: grey;
+      font-weight: lighter;
+    }
+    
+    /* Input with id=new-task-submit (add button) */
+    #list-submit {
+      color: rgb(215, 33, 124);
+      font-size: 2rem;
+      font-weight: 700;
+      background-image: linear-gradient(to right, rgb(215, 33, 124), crimson);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    
+    #list-submit:hover {
+      opacity: 0.8;
+    }
+    
+    #list-submit:active {
+      opacity: 0.8;
+    }
+    
+    /* Main section of the body */
+    main {
+      flex: 1 1 0%;
+      padding: 2rem 1rem;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    /* Task bar */
+    .task-list {
+      padding: 1rem;
+    }
+    
+    /* Task-list text */
+    .task-list h2 {
+      font-size: 2rem;
+      color: rgb(215, 33, 124);
+      text-shadow: 2px 2px 2px rgba(3, 39, 123, 0.445);
+      font-weight: 500;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      position: relative;
+      margin-top: -2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Task-list bar */
+    #tasks .task {
+      display: flex;
+      justify-content: space-between;
+      background: transparent;
+      border: 2px solid hotpink;
+      padding: 1rem;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      transition: background-color 0.3s;
+    }
+    
+    #tasks .task:hover {
+      background-color: white;
+    }
+    
+    /* Flex dimensions */
+    #tasks .task .content {
+      flex: 1 1 0%;
+    }
+    
+    /* Text format */
+    #tasks .task .content .text {
+      color: black;
+      font-size: 1.175rem;
+      width: 100%;
+      display: block;
+      transition: 0.4s;
+    }
+    
+    /* Color of both bars */
+    #tasks .task .content .text:not(:read-only) {
+      color: black;
+    }
+    
+    /* Display of both bars */
+    #tasks .task .actions {
+      display: flex;
+      margin: 0 -0.5rem;
+    }
+    
+    /* Button design and pointer */
+    .task .actions button {
+      cursor: pointer;
+      margin: 0 0.5rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: 0.4s;
+    }
+    
+    /* Opacity */
+    .task .actions button:hover {
+      opacity: 0.8;
+    }
+    
+    /* Opacity */
+    .task .actions button:active {
+      opacity: 0.6;
+    }
+    
+    /* Edit button */
+    .task .actions .edit {
+      font-size: 1.25rem;
+      font-weight: 700;
+      background-image: linear-gradient(to right, rgba(99, 0, 238, 0.795), rgba(23, 1, 54, 0.662));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    
+    /* Color of delete button */
+    .task .actions .delete {
+      background-image: linear-gradient(to right, crimson, rgb(216, 15, 109));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    

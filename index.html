@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="icon" href="download.png/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <header>
+        <h1>
+            <strong>
+                <i class="fa-sharp fa-solid fa-list"></i>
+                &nbsp; TO-DO LIST
+            </strong>
+        </h1>
+        <h2>Plan</h2>
+        <form id="main-list-form">
+            <input type="text" id="list-input" placeholder="Enter Your Task Here!">
+            <input type="submit" id="list-submit" value="ADD">
+        </form>
+    </header>
+    <main>
+        <section class="task-list">
+            <h2>
+                <i class="fa-sharp fa-solid fa-list-check"></i>
+                Tasks
+            </h2>
+            <div id="tasks"></div>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/45ba31bcd6.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
